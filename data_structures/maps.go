@@ -3,10 +3,8 @@ package data_structures
 func findPeopleWithCommonInterest(data map[string][]string, interest string) []string {
 	result := []string {}
 	for key, value := range data {
-		for _, itst := range value {
-			if itst == interest {
-				result = append(result, key)
-			}
+		if contains(value, interest) {
+			result = append(result, key)
 		}
 	}
 	return result
